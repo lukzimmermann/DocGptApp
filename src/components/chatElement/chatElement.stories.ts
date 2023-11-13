@@ -1,7 +1,7 @@
 import { Meta, StoryObj } from '@storybook/react';
 import '../../index.css';
 import ChatElement from './chatElement.component';
-import Document from '../../models/document.model';
+import DocumentModel from '../../models/document.model';
 
 const meta: Meta<typeof ChatElement> = {
   title: 'ChatElement',
@@ -13,7 +13,7 @@ export default meta;
 
 type Story = StoryObj<typeof ChatElement>;
 
-const documents: Document[] = [
+const documents: DocumentModel[] = [
   {
     title: 'Algorithmen und Datenstrukturen Vorlesung 7',
     fileName: 'ads_v7.pdf',

@@ -2,12 +2,12 @@ import '../../index.css';
 import Rating from '../rating/rating.component';
 import styles from './documentBadge.module.css';
 
-type Props = {
+interface Props {
   title: string;
   fileName: string;
   pageNumber: number;
   rating: number;
-};
+}
 
 function DocumentBadge({
   title = 'title',

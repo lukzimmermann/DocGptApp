@@ -1,10 +1,10 @@
 import { Star, StarHalf } from '@phosphor-icons/react';
 import style from './rating.module.css';
 
-type Props = {
+interface Props {
   rating: number;
   size?: number;
-};
+}
 
 function Rating({ rating = 2, size = 20 }: Props) {
   const maxRating = 4;

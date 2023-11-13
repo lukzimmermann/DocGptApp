@@ -1,24 +1,21 @@
 import styles from './chatElement.module.css';
-import Document from '../../models/document.model';
+import DocumentModel from '../../models/document.model';
 import DocumentBadge from '../documentBadge/documentBadge.component';
 import { Robot, ThumbsDown, ThumbsUp } from '@phosphor-icons/react';
 
-type Props = {
+interface Props {
   role: 'bot' | 'user';
   content: string;
-  documents: Document[];
-};
+  documents?: DocumentModel[];
+}
 
-function ChatElement({ role, content = 'empty', documents }: Props) {
+function ChatElement({ role, content, documents = [] }: Props) {
+  const thumbSize = 22;
+
   const getMainContainerStyle = () => {
     if (role === 'bot')
       return `${styles['main-container']} ${styles['bot-background']}`;
     else return `${styles['main-container']}`;
-  };
-
-  const getRightContainerStyle = () => {
-    if (role === 'bot') return `${styles['right-container']}`;
-    else return `${styles['right-container']} ${styles['bot-visibility']}`;
   };
 
   const createIcon = () => {
@@ -29,31 +26,56 @@ function ChatElement({ role, content = 'empty', documents }: Props) {
         </div>
       );
     } else {
-      return <div className={styles['user-Icon']}>L</div>;
+      return <div className={styles['user-Icon']}>LZ</div>;
     }
   };
 
   return (
     <div className={getMainContainerStyle()}>
       <div className={styles['left-container']}>{createIcon()}</div>
-      <div className={styles['center-container']}>
-        <div>
-          <div className={styles['document-container']}>
-            {documents.map((doc) => (
-              <DocumentBadge
-                title={doc.title}
-                fileName={doc.fileName}
-                pageNumber={doc.page}
-                rating={doc.rating}
-              />
-            ))}
-          </div>
+      <div
+        className={
+          documents.length > 0
+            ? styles['center-container']
+            : styles['center-container-flex']
+        }
+      >
+        <div className={styles['content-container']}>
+          {documents.length > 0 ? (
+            <div className={styles['document-container']}>
+              {documents.map((doc) => (
+                <DocumentBadge
+                  title={doc.title}
+                  fileName={doc.fileName}
+                  pageNumber={doc.page}
+                  rating={doc.rating}
+                />
+              ))}
+            </div>
+          ) : (
+            <></>
+          )}
+
           <div className={styles.content}>{content}</div>
         </div>
       </div>
-      <div className={getRightContainerStyle()}>
-        <ThumbsUp weight="fill" size={30} />
-        <ThumbsDown weight="fill" size={30} />
+      <div className={styles['right-container']}>
+        {role === 'bot' ? (
+          <div>
+            <ThumbsUp
+              className={styles.thumbsUp}
+              weight="fill"
+              size={thumbSize}
+            />
+            <ThumbsDown
+              className={styles.thumbsDown}
+              weight="fill"
+              size={thumbSize}
+            />
+          </div>
+        ) : (
+          <></>
+        )}
       </div>
     </div>
   );

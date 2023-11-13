@@ -5,39 +5,52 @@
 }
 
 .bot-background {
-  background-color: #ffffff08;
+  background-color: #ffffff10;
 }
 
 .left-container {
   margin-right: 1rem;
+  padding: 0;
 }
 
 .center-container {
   white-space: 3rem;
   min-width: 1rem;
+  flex-grow: 1;
+}
+
+.center-container-flex {
+  white-space: 3rem;
+  min-width: 1rem;
+  display: flex;
+  align-items: center;
+  flex-grow: 1;
 }
 
 .right-container {
   margin-left: 1rem;
   display: flex;
   flex-direction: column;
-  gap: 1rem;
+  gap: 2rem;
+  min-width: 30px;
+  max-width: 30px;
 }
 
-.bot-visibility {
-  visibility: hidden;
+.content-container {
+  display: flex;
+  flex-direction: column;
 }
 
 .document-container {
   display: flex;
   flex-direction: column;
   gap: 1rem;
-  overflow: hidden;
+  margin-bottom: 1rem;
 }
 
 .content {
-  margin-top: 2rem;
-  font-size: 1.5rem;
+  margin: 0;
+  padding: 0;
 }
 
 .bot-Icon {
@@ -58,5 +71,25 @@
   display: flex;
   justify-content: center;
   align-items: center;
-  font-size: 2rem;
+  font-size: 1.5rem;
+}
+
+.thumbsDown {
+  transform: scaleX(-1);
+  color: var(--secondary);
+  transition: color 0.2s;
+}
+
+.thumbsDown:hover {
+  color: var(--primary);
+  cursor: pointer;
+}
+
+.thumbsUp {
+  color: var(--secondary);
+}
+
+.thumbsUp:hover {
+  color: var(--primary);
+  cursor: pointer;
 }
