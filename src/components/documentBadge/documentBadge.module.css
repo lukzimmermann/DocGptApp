@@ -1,0 +1,50 @@
+.main-container {
+  background-color: #ffffff1f;
+  border-radius: 1rem;
+  padding: 0.75rem;
+  transition: background-color 0.2s;
+}
+
+.main-container:hover {
+  background-color: #ffffff3f;
+}
+
+.first-row {
+  display: flex;
+  flex-direction: row;
+}
+
+.second-row {
+  display: flex;
+  flex-direction: row;
+}
+
+.title {
+  font-weight: 800;
+  color: var(--primary);
+  margin: 0;
+  flex: 1;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.rating {
+  align-items: flex-end;
+  overflow: hidden;
+}
+
+.file-name {
+  color: var(--secondary);
+  flex: 1;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.page {
+  color: var(--secondary);
+  align-items: flex-end;
+  overflow: hidden;
+  white-space: nowrap;
+}
