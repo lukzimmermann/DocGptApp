@@ -1,0 +1,62 @@
+.main-container {
+  padding: 1.5rem;
+  display: flex;
+  overflow: hidden;
+}
+
+.bot-background {
+  background-color: #ffffff08;
+}
+
+.left-container {
+  margin-right: 1rem;
+}
+
+.center-container {
+  white-space: 3rem;
+  min-width: 1rem;
+}
+
+.right-container {
+  margin-left: 1rem;
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.bot-visibility {
+  visibility: hidden;
+}
+
+.document-container {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  overflow: hidden;
+}
+
+.content {
+  margin-top: 2rem;
+  font-size: 1.5rem;
+}
+
+.bot-Icon {
+  width: 3.5rem;
+  height: 3.5rem;
+  background-color: #2f6de3;
+  border-radius: 100rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.user-Icon {
+  width: 3.5rem;
+  height: 3.5rem;
+  background-color: #ce8800;
+  border-radius: 100rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 2rem;
+}
