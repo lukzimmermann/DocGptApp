@@ -1,0 +1,51 @@
+.mainContainer {
+  display: flex;
+  flex-direction: column;
+  height: 100vh;
+  position: relative;
+}
+
+.chatContainer {
+  flex: 1;
+  overflow-y: auto;
+  position: relative;
+  bottom: 0;
+  z-index: 1;
+  display: flex;
+  flex-direction: column-reverse;
+  align-items: flex-start;
+}
+
+.chatContainer::-webkit-scrollbar-track-piece {
+  background-color: transparent; /* Color of the scrollbar track */
+}
+.chatContainer::-webkit-scrollbar {
+  width: 8px; /* Adjust the width of the scrollbar */
+}
+
+/* Style for the scrollbar handle */
+.chatContainer::-webkit-scrollbar-thumb {
+  background-color: var(--secondary); /* Color of the scrollbar handle */
+  border-radius: 4px; /* Adjust the border-radius for rounded corners */
+}
+
+/* Style for the scrollbar track on hover */
+.chatContainer::-webkit-scrollbar-track {
+  background-color: transparent; /* Color of the scrollbar track */
+  margin-bottom: 2rem;
+}
+
+.gradientBox {
+  height: 2rem;
+  background: linear-gradient(to top, rgba(36, 36, 36, 1), rgba(36, 36, 36, 0));
+  position: absolute;
+  bottom: 5.5rem;
+  left: 0;
+  right: 0;
+  z-index: 2;
+}
+
+.inputContainer {
+  margin: 0.5rem 2rem 2rem 2rem;
+  z-index: 3;
+}
